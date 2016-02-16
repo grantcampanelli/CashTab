@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             style: .Default,
             handler: { (action:UIAlertAction) -> Void in
                 let textField = alert.textFields!.first
-                self.saveName(textField!.text!)
+                self.saveTransaction(textField!.text!)
                 self.myTableView.reloadData()
         })
         
@@ -36,16 +36,16 @@ class ViewController: UIViewController, UITableViewDataSource {
             (action: UIAlertAction) -> Void in
         }
         
-        // Configure the alert controller to handle the textfield
+        // Configure the alert controller - Add a textfield in the alert
         alert.addTextFieldWithConfigurationHandler {
             (textField: UITextField) -> Void in
         }
         
+        // Add another textfield in the alert
         alert.addTextFieldWithConfigurationHandler {
             (transactionCost: UITextField) -> Void in
             transactionCost.placeholder = "$1.99"
         }
-        
         
         
         // Add the "Save" and "Cancel" actions to the alert controller
@@ -108,7 +108,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     // SECTION: Helper Functions
     // ---------------------------------------
     
-    func saveName(name: String){
+    // fetch (query) the transactions from the context
+    func fetchLog() {
+        // TODO:
+        // Move the stuff from viewWillAppear() in here then call this function in viewWillAppear()
+    }
+    
+    // Save the transaction to the managed object context
+    func saveTransaction(name: String){
         // 1: Acquire the managed object context (so we can do work with managed objects) using a reference to the app delegate
         /* 
             - FULL EXPLANATION -
@@ -180,10 +187,12 @@ class ViewController: UIViewController, UITableViewDataSource {
         return cell!
     }
 
-    // Callback that 
+    // Callback that will allow for cell editing
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
+    
+    
     
     // --------------------
     // SECTION: Misc
