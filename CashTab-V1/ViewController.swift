@@ -172,7 +172,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell!
     }
-    
+
+    // Callback that 
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
     
     // --------------------
     // SECTION: Misc
