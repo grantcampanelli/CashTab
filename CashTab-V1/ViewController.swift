@@ -40,6 +40,13 @@ class ViewController: UIViewController, UITableViewDataSource {
             (textField: UITextField) -> Void in
         }
         
+        alert.addTextFieldWithConfigurationHandler {
+            (transactionCost: UITextField) -> Void in
+            transactionCost.placeholder = "$1.99"
+        }
+        
+        
+        
         // Add the "Save" and "Cancel" actions to the alert controller
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
