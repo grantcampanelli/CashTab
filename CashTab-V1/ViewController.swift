@@ -2,9 +2,9 @@
 //  ViewController.swift
 //  CashTab-V1
 //
-//  Created by Kevin Tsui on 2/9/16.
+//  Created by Kevin Tsui & Grant Campanelli on 2/9/16.
 //  Copyright © 2016 Kevin Tsui. All rights reserved.
-// TESTING
+//
 //
 
 import UIKit
