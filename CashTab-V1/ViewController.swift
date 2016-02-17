@@ -67,30 +67,42 @@ class ViewController: UIViewController, UITableViewDataSource {
         myTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
+    // Callback just before view appears
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // 1: Get the application delegate and grab a reference to its managed object context 
+        // Update the transactions view array
+        self.fetchTransactions()
+    }
+    
+    // ---------------------------------------
+    // SECTION: Helper Functions
+    // ---------------------------------------
+    
+    // Fetch (query) the transactions from the context
+    func fetchTransactions() {
+        
+        // 1: Get the application delegate and grab a reference to its managed object context
         let appDelegate     = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext  = appDelegate.managedObjectContext
         
         // 2: Create a fetch request that will find all 'Transaction's (entity description)
         /*
-            - FULL EXPLANATION -
-            NSFetchRequest is the class responsible for fetching from Core Data, essentially the thing that queries the database. NSEntityDescription is a qualifier that can refine these results. (e.g. "I want all employees in the past 3 years)
+        - FULL EXPLANATION -
+        NSFetchRequest is the class responsible for fetching from Core Data, essentially the thing that queries the database. NSEntityDescription is a qualifier that can refine these results. (e.g. "I want all employees in the past 3 years)
         
-            Setting a fetch request's entity property (or initializing it with init(entityName: <something>)), fetches all objects of a particular entity. This is how we will fetch all transactions.
+        Setting a fetch request's entity property (or initializing it with init(entityName: <something>)), fetches all objects of a particular entity. This is how we will fetch all transactions.
         */
         let fetchRequest = NSFetchRequest(entityName: "Transaction")
         
         
         // 3: Use the fetch request to grab an array of the transactions that matches the request
         /*
-            - FULL EXPLANATION -
-            We hand the fetch request to the managed object context to do the heavy lifting.
+        - FULL EXPLANATION -
+        We hand the fetch request to the managed object context to do the heavy lifting.
         
-            executeFetchRequest(...)
-            Returns an array of managed objects that meets the criteria specified by the fetch request
+        executeFetchRequest(...)
+        Returns an array of managed objects that meets the criteria specified by the fetch request
         */
         do {
             // execute the fetch request and store the result
@@ -101,17 +113,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         } catch let error as NSError {
             print("Yikes. Could NOT fetch \(error), \(error.userInfo)")
         }
-        
-    }
-    
-    // ---------------------------------------
-    // SECTION: Helper Functions
-    // ---------------------------------------
-    
-    // fetch (query) the transactions from the context
-    func fetchLog() {
-        // TODO:
-        // Move the stuff from viewWillAppear() in here then call this function in viewWillAppear()
     }
     
     // Save the transaction to the managed object context
@@ -192,6 +193,29 @@ class ViewController: UIViewController, UITableViewDataSource {
         return true
     }
     
+    
+    // Callback that handles swipe-to-delete action
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        // Swipe-to-Delete action
+        if (editingStyle == .Delete)
+        {
+            // Get the transaction that will be deleted
+            let transactionToDelete = transactions[indexPath.row]
+            
+            // Get the managed object context so we can perform work on it
+            let appDelegate     = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext  = appDelegate.managedObjectContext
+            
+            // Delete the transaction from the context
+            managedContext.deleteObject(transactionToDelete)
+            
+            // Refresh the table view
+            self.fetchTransactions()
+            
+            // Tell table view to animate out that row
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        }
+    }
     
     
     // --------------------
