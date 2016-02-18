@@ -26,9 +26,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         let saveAction = UIAlertAction(title: "Save",
             style: .Default,
             handler: { (action:UIAlertAction) -> Void in
-                let transactionName = alert.textFields![0]
+                let transactionTitle = alert.textFields![0]
                 let transactionCost = alert.textFields![1]
-                self.saveTransaction(transactionName.text!, cost: transactionCost.text!)
+                self.saveTransaction(transactionTitle.text!, cost: transactionCost.text!)
                 self.myTableView.reloadData()
         })
         
@@ -117,7 +117,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     // Save the transaction to the managed object context
-    func saveTransaction(name: String, cost: String){
+    func saveTransaction(title: String, cost: String){
         // 1: Acquire the managed object context (so we can do work with managed objects) using a reference to the app delegate
         /* 
             - FULL EXPLANATION -
@@ -147,8 +147,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         let myTransaction   = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
         
-        // 3: Set the "name" attribute in the NSManagedObject using the parameter
-        myTransaction.setValue(name, forKey: "name")
+        // 3: Set the values for "myTransaction"'s attributes
+        myTransaction.setValue(title, forKey: "title")
+        myTransaction.setValue(cost, forKey: "cost")
         
         
         // 4: Try to commit our changes to myTransaction and save to disk. Then insert the new managed object into the transactions array so it shows up in the table view when it reloads
@@ -183,8 +184,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Store the transaction
         let curTransaction = transactions[indexPath.row]
         
-        // Grab the "name" out of the Transaction object (of type NSManagedObject)
-        cell!.textLabel!.text = curTransaction.valueForKey("name") as? String
+        // Grab the "title" out of the Transaction object (of type NSManagedObject)
+        cell!.textLabel!.text = curTransaction.valueForKey("title") as? String
         
         return cell!
     }
