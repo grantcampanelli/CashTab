@@ -26,8 +26,9 @@ class ViewController: UIViewController, UITableViewDataSource {
         let saveAction = UIAlertAction(title: "Save",
             style: .Default,
             handler: { (action:UIAlertAction) -> Void in
-                let textField = alert.textFields!.first
-                self.saveTransaction(textField!.text!)
+                let transactionName = alert.textFields![0]
+                let transactionCost = alert.textFields![1]
+                self.saveTransaction(transactionName.text!, cost: transactionCost.text!)
                 self.myTableView.reloadData()
         })
         
@@ -116,7 +117,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     // Save the transaction to the managed object context
-    func saveTransaction(name: String){
+    func saveTransaction(name: String, cost: String){
         // 1: Acquire the managed object context (so we can do work with managed objects) using a reference to the app delegate
         /* 
             - FULL EXPLANATION -
@@ -133,7 +134,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         let appDelegate     = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext  = appDelegate.managedObjectContext
         
-        
+
         // 2: Create and insert a new managed object into the context
         /*
             - FULL EXPLANATION -
