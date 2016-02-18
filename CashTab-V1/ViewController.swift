@@ -214,6 +214,15 @@ class ViewController: UIViewController, UITableViewDataSource {
             
             // Tell table view to animate out that row
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            
+            // Commit the changes to the disk
+            do {
+                // Try to save the changes, note that it COULD throw an error
+                try managedContext.save()
+                
+            } catch let error as NSError {
+                print("Welp. Couldn't save \(error), \(error.userInfo)")
+            }
         }
     }
     

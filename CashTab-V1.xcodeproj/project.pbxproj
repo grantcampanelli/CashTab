@@ -15,6 +15,7 @@
 		AA4477951C6A84030012376D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4477931C6A84030012376D /* LaunchScreen.storyboard */; };
 		AA4477A01C6A84030012376D /* CashTab_V1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44779F1C6A84030012376D /* CashTab_V1Tests.swift */; };
 		AA4477AB1C6A84030012376D /* CashTab_V1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477AA1C6A84030012376D /* CashTab_V1UITests.swift */; };
+		AAAE36DE1C765E4500E28636 /* CTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE36DD1C765E4500E28636 /* CTModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		AA4477A61C6A84030012376D /* CashTab-V1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CashTab-V1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4477AA1C6A84030012376D /* CashTab_V1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashTab_V1UITests.swift; sourceTree = "<group>"; };
 		AA4477AC1C6A84030012376D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAAE36DD1C765E4500E28636 /* CTModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				AA4477871C6A84030012376D /* AppDelegate.swift */,
 				AA4477891C6A84030012376D /* ViewController.swift */,
+				AAAE36DD1C765E4500E28636 /* CTModel.swift */,
 				AA44778B1C6A84030012376D /* Main.storyboard */,
 				AA4477911C6A84030012376D /* Assets.xcassets */,
 				AA4477931C6A84030012376D /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAE36DE1C765E4500E28636 /* CTModel.swift in Sources */,
 				AA4477901C6A84030012376D /* CashTab_V1.xcdatamodeld in Sources */,
 				AA44778A1C6A84030012376D /* ViewController.swift in Sources */,
 				AA4477881C6A84030012376D /* AppDelegate.swift in Sources */,
@@ -491,6 +495,7 @@
 				AA4477B11C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA4477B21C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1Tests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +504,7 @@
 				AA4477B41C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA4477B51C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1UITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +513,7 @@
 				AA4477B71C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
