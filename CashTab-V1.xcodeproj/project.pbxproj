@@ -7,12 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6AED494A1C766622002ED3DA /* CashTab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6AED49481C766622002ED3DA /* CashTab.xcdatamodeld */; };
-		6AED49571C766723002ED3DA /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AED49551C766723002ED3DA /* Transaction+CoreDataProperties.swift */; };
-		6AED49581C766723002ED3DA /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AED49561C766723002ED3DA /* Transaction.swift */; };
 		AA4477881C6A84030012376D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477871C6A84030012376D /* AppDelegate.swift */; };
 		AA44778A1C6A84030012376D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477891C6A84030012376D /* ViewController.swift */; };
 		AA44778D1C6A84030012376D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA44778B1C6A84030012376D /* Main.storyboard */; };
+		AA4477901C6A84030012376D /* CashTab_V1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA44778E1C6A84030012376D /* CashTab_V1.xcdatamodeld */; };
 		AA4477921C6A84030012376D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4477911C6A84030012376D /* Assets.xcassets */; };
 		AA4477951C6A84030012376D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4477931C6A84030012376D /* LaunchScreen.storyboard */; };
 		AA4477A01C6A84030012376D /* CashTab_V1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44779F1C6A84030012376D /* CashTab_V1Tests.swift */; };
@@ -37,13 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6AED49491C766622002ED3DA /* CashTab.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CashTab.xcdatamodel; sourceTree = "<group>"; };
-		6AED49551C766723002ED3DA /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		6AED49561C766723002ED3DA /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		AA4477841C6A84020012376D /* CashTab-V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CashTab-V1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4477871C6A84030012376D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA4477891C6A84030012376D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA44778C1C6A84030012376D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AA44778F1C6A84030012376D /* CashTab_V1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CashTab_V1.xcdatamodel; sourceTree = "<group>"; };
 		AA4477911C6A84030012376D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA4477941C6A84030012376D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA4477961C6A84030012376D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,13 +101,11 @@
 			children = (
 				AA4477871C6A84030012376D /* AppDelegate.swift */,
 				AA4477891C6A84030012376D /* ViewController.swift */,
-				6AED49481C766622002ED3DA /* CashTab.xcdatamodeld */,
-				6AED49551C766723002ED3DA /* Transaction+CoreDataProperties.swift */,
-				6AED49561C766723002ED3DA /* Transaction.swift */,
 				AA44778B1C6A84030012376D /* Main.storyboard */,
 				AA4477911C6A84030012376D /* Assets.xcassets */,
 				AA4477931C6A84030012376D /* LaunchScreen.storyboard */,
 				AA4477961C6A84030012376D /* Info.plist */,
+				AA44778E1C6A84030012376D /* CashTab_V1.xcdatamodeld */,
 			);
 			path = "CashTab-V1";
 			sourceTree = "<group>";
@@ -268,10 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AED49571C766723002ED3DA /* Transaction+CoreDataProperties.swift in Sources */,
+				AA4477901C6A84030012376D /* CashTab_V1.xcdatamodeld in Sources */,
 				AA44778A1C6A84030012376D /* ViewController.swift in Sources */,
-				6AED49581C766723002ED3DA /* Transaction.swift in Sources */,
-				6AED494A1C766622002ED3DA /* CashTab.xcdatamodeld in Sources */,
 				AA4477881C6A84030012376D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,13 +406,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "CashTab-V1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CPE458.CashTab-V1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CashTab-V1/CashTab-V1-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -428,12 +417,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "CashTab-V1/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "CPE458.CashTab-V1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "CashTab-V1/CashTab-V1-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -504,7 +491,6 @@
 				AA4477B11C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		AA4477B21C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1Tests" */ = {
 			isa = XCConfigurationList;
@@ -513,7 +499,6 @@
 				AA4477B41C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 		AA4477B51C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1UITests" */ = {
 			isa = XCConfigurationList;
@@ -522,18 +507,17 @@
 				AA4477B71C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		6AED49481C766622002ED3DA /* CashTab.xcdatamodeld */ = {
+		AA44778E1C6A84030012376D /* CashTab_V1.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				6AED49491C766622002ED3DA /* CashTab.xcdatamodel */,
+				AA44778F1C6A84030012376D /* CashTab_V1.xcdatamodel */,
 			);
-			currentVersion = 6AED49491C766622002ED3DA /* CashTab.xcdatamodel */;
-			path = CashTab.xcdatamodeld;
+			currentVersion = AA44778F1C6A84030012376D /* CashTab_V1.xcdatamodel */;
+			path = CashTab_V1.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
