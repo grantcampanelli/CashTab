@@ -107,13 +107,9 @@
 			children = (
 				AA4477871C6A84030012376D /* AppDelegate.swift */,
 				AA4477891C6A84030012376D /* ViewController.swift */,
-<<<<<<< HEAD
 				6AED49481C766622002ED3DA /* CashTab.xcdatamodeld */,
 				6AED49551C766723002ED3DA /* Transaction+CoreDataProperties.swift */,
 				6AED49561C766723002ED3DA /* Transaction.swift */,
-=======
-				AAAE36DD1C765E4500E28636 /* CTModel.swift */,
->>>>>>> e8e5798c896cb637143a3634002b7e30a5c2077f
 				AA44778B1C6A84030012376D /* Main.storyboard */,
 				AA4477911C6A84030012376D /* Assets.xcassets */,
 				AA4477931C6A84030012376D /* LaunchScreen.storyboard */,
@@ -274,12 +270,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				6AED49571C766723002ED3DA /* Transaction+CoreDataProperties.swift in Sources */,
-=======
-				AAAE36DE1C765E4500E28636 /* CTModel.swift in Sources */,
-				AA4477901C6A84030012376D /* CashTab_V1.xcdatamodeld in Sources */,
->>>>>>> e8e5798c896cb637143a3634002b7e30a5c2077f
 				AA44778A1C6A84030012376D /* ViewController.swift in Sources */,
 				6AED49581C766723002ED3DA /* Transaction.swift in Sources */,
 				6AED494A1C766622002ED3DA /* CashTab.xcdatamodeld in Sources */,
