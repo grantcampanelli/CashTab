@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 class ViewController: UIViewController, UITableViewDataSource {
-
+    
     @IBOutlet weak var myTableView: UITableView!
     
     var transactions = [NSManagedObject]() // Array of CoreData Objects
@@ -119,29 +119,29 @@ class ViewController: UIViewController, UITableViewDataSource {
     // Save the transaction to the managed object context
     func saveTransaction(title: String, cost: String){
         // 1: Acquire the managed object context (so we can do work with managed objects) using a reference to the app delegate
-        /* 
-            - FULL EXPLANATION -
-            Before we can save/retrieve anything from our Core Data store, we first need to get an NSManagedObjectContext.
-            Think of a managed object context as an in-memory "scratchpad" for working with managed objects.
+        /*
+        - FULL EXPLANATION -
+        Before we can save/retrieve anything from our Core Data store, we first need to get an NSManagedObjectContext.
+        Think of a managed object context as an in-memory "scratchpad" for working with managed objects.
         
-            Saving a new managed object to Core Data is considered a 2-step process
-                1: Insert a new managed object into a managed object context
-                2: "Commit" the changes in our managed object context (overwriting the existing context)
+        Saving a new managed object to Core Data is considered a 2-step process
+        1: Insert a new managed object into a managed object context
+        2: "Commit" the changes in our managed object context (overwriting the existing context)
         
-            The default managed object context was created during the project's creation and lives as a property of the
-            application delegate. To access it, we first need a reference to the app delegate
+        The default managed object context was created during the project's creation and lives as a property of the
+        application delegate. To access it, we first need a reference to the app delegate
         */
         let appDelegate     = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext  = appDelegate.managedObjectContext
         
-
+        
         // 2: Create and insert a new managed object into the context
         /*
-            - FULL EXPLANATION -
-            We are creating a new managed object and inserting it into the managed object context.
+        - FULL EXPLANATION -
+        We are creating a new managed object and inserting it into the managed object context.
         
-            NSEntityDescription
-            The NSManagedObject is a "shape-shifter" class (able to represent any entity). It's the piece that links the entity definition from your data model with an instance of the NSManagedObject at runtime
+        NSEntityDescription
+        The NSManagedObject is a "shape-shifter" class (able to represent any entity). It's the piece that links the entity definition from your data model with an instance of the NSManagedObject at runtime
         */
         let entity          = NSEntityDescription.entityForName("Transaction", inManagedObjectContext: managedContext)
         let myTransaction   = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
@@ -189,7 +189,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return cell!
     }
-
+    
     // Callback that will allow for cell editing
     func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
@@ -216,6 +216,15 @@ class ViewController: UIViewController, UITableViewDataSource {
             
             // Tell table view to animate out that row
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            
+            // Commit the changes to the disk
+            do {
+                // Try to save the changes, note that it COULD throw an error
+                try managedContext.save()
+                
+            } catch let error as NSError {
+                print("Welp. Couldn't save \(error), \(error.userInfo)")
+            }
         }
     }
     
@@ -227,7 +236,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
