@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		AA4477881C6A84030012376D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477871C6A84030012376D /* AppDelegate.swift */; };
-		AA44778A1C6A84030012376D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477891C6A84030012376D /* ViewController.swift */; };
+		AA44778A1C6A84030012376D /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477891C6A84030012376D /* TransactionTableViewController.swift */; };
 		AA44778D1C6A84030012376D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA44778B1C6A84030012376D /* Main.storyboard */; };
 		AA4477901C6A84030012376D /* CashTab_V1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA44778E1C6A84030012376D /* CashTab_V1.xcdatamodeld */; };
 		AA4477921C6A84030012376D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA4477911C6A84030012376D /* Assets.xcassets */; };
 		AA4477951C6A84030012376D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA4477931C6A84030012376D /* LaunchScreen.storyboard */; };
 		AA4477A01C6A84030012376D /* CashTab_V1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44779F1C6A84030012376D /* CashTab_V1Tests.swift */; };
 		AA4477AB1C6A84030012376D /* CashTab_V1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477AA1C6A84030012376D /* CashTab_V1UITests.swift */; };
+		AAAE36E21C7D2A0400E28636 /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE36E11C7D2A0400E28636 /* TransactionDetailViewController.swift */; };
+		AAAE36E41C7D4E3700E28636 /* CTModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAE36E31C7D4E3700E28636 /* CTModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,7 @@
 /* Begin PBXFileReference section */
 		AA4477841C6A84020012376D /* CashTab-V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CashTab-V1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4477871C6A84030012376D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA4477891C6A84030012376D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA4477891C6A84030012376D /* TransactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
 		AA44778C1C6A84030012376D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA44778F1C6A84030012376D /* CashTab_V1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CashTab_V1.xcdatamodel; sourceTree = "<group>"; };
 		AA4477911C6A84030012376D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		AA4477A61C6A84030012376D /* CashTab-V1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CashTab-V1UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4477AA1C6A84030012376D /* CashTab_V1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashTab_V1UITests.swift; sourceTree = "<group>"; };
 		AA4477AC1C6A84030012376D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAAE36E11C7D2A0400E28636 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		AAAE36E31C7D4E3700E28636 /* CTModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				AA4477871C6A84030012376D /* AppDelegate.swift */,
-				AA4477891C6A84030012376D /* ViewController.swift */,
+				AA4477891C6A84030012376D /* TransactionTableViewController.swift */,
 				AA44778B1C6A84030012376D /* Main.storyboard */,
+				AAAE36E11C7D2A0400E28636 /* TransactionDetailViewController.swift */,
+				AAAE36E31C7D4E3700E28636 /* CTModel.swift */,
 				AA4477911C6A84030012376D /* Assets.xcassets */,
 				AA4477931C6A84030012376D /* LaunchScreen.storyboard */,
 				AA4477961C6A84030012376D /* Info.plist */,
@@ -262,8 +268,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAAE36E21C7D2A0400E28636 /* TransactionDetailViewController.swift in Sources */,
 				AA4477901C6A84030012376D /* CashTab_V1.xcdatamodeld in Sources */,
-				AA44778A1C6A84030012376D /* ViewController.swift in Sources */,
+				AA44778A1C6A84030012376D /* TransactionTableViewController.swift in Sources */,
+				AAAE36E41C7D4E3700E28636 /* CTModel.swift in Sources */,
 				AA4477881C6A84030012376D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +499,7 @@
 				AA4477B11C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA4477B21C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1Tests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +508,7 @@
 				AA4477B41C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA4477B51C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1UITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +517,7 @@
 				AA4477B71C6A84030012376D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

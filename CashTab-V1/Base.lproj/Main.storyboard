@@ -4,12 +4,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List of Transactions-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CashTab_V1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="TransactionTableViewController" customModule="CashTab_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,9 +19,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RlK-71-oFK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="38" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RlK-71-oFK">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransactionViewCell" rowHeight="38" id="bBz-SG-HN9" customClass="TransactionViewCell" customModule="CashTab_V1" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="38"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bBz-SG-HN9" id="WSR-NJ-vrt">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="37"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlF-tg-eIv">
+                                                    <rect key="frame" x="25" y="8" width="133" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nK9-ca-4zc">
+                                                    <rect key="frame" x="166" y="8" width="84" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cost" destination="nK9-ca-4zc" id="kH2-2u-xbG"/>
+                                            <outlet property="title" destination="ZlF-tg-eIv" id="luv-qH-LJm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="9mx-l3-Ff1"/>
                                 </connections>
@@ -34,12 +63,19 @@
                             <constraint firstItem="RlK-71-oFK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="u27-0f-Sp6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QMs-7p-b3J">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="Iw0-jZ-JTH">
-                            <connections>
-                                <action selector="addTransaction:" destination="BYZ-38-t0r" id="7hO-cr-2GE"/>
-                            </connections>
-                        </barButtonItem>
+                    <navigationItem key="navigationItem" title="List of Transactions" id="QMs-7p-b3J">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Add" id="Iw0-jZ-JTH">
+                                <connections>
+                                    <action selector="addTransaction:" destination="BYZ-38-t0r" id="7hO-cr-2GE"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="PlI-gP-YTk">
+                                <connections>
+                                    <segue destination="xTn-fv-Ldh" kind="show" identifier="AddTransaction" id="u20-kv-ql6"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="RlK-71-oFK" id="M4s-gl-hkT"/>
@@ -47,7 +83,92 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="357"/>
+            <point key="canvasLocation" x="1064" y="303"/>
+        </scene>
+        <!--New Transaction-->
+        <scene sceneID="Ijv-gO-xen">
+            <objects>
+                <viewController id="FLJ-a9-umS" customClass="TransactionDetailViewController" customModule="CashTab_V1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aii-Mz-CWV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pau-KK-Em0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6hg-zE-23C">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AHF-nR-0UX">
+                                <rect key="frame" x="20" y="84" width="560" height="164"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transaction Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P57-NO-tgO">
+                                        <rect key="frame" x="0.0" y="0.0" width="132" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Costco, Target, McDonald's" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bru-IC-PdW">
+                                        <rect key="frame" x="0.0" y="29" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgN-Qa-DnM">
+                                        <rect key="frame" x="0.0" y="67" width="41" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$1.99" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kqz-AU-8Gy">
+                                        <rect key="frame" x="0.0" y="96" width="560" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAL-Nx-g71">
+                                        <rect key="frame" x="0.0" y="134" width="98" height="30"/>
+                                        <state key="normal" title="Do Something"/>
+                                        <connections>
+                                            <action selector="doSomething:" destination="FLJ-a9-umS" eventType="touchUpInside" id="2ps-eV-7F2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="bru-IC-PdW" firstAttribute="leading" secondItem="AHF-nR-0UX" secondAttribute="leading" id="FOc-0x-Zu5"/>
+                                    <constraint firstItem="kqz-AU-8Gy" firstAttribute="leading" secondItem="AHF-nR-0UX" secondAttribute="leading" id="NzS-9U-ofE"/>
+                                    <constraint firstAttribute="trailing" secondItem="bru-IC-PdW" secondAttribute="trailing" id="UtX-nX-x2z"/>
+                                    <constraint firstAttribute="trailing" secondItem="kqz-AU-8Gy" secondAttribute="trailing" id="k0X-QK-QJZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AHF-nR-0UX" firstAttribute="leading" secondItem="6hg-zE-23C" secondAttribute="leadingMargin" id="1gR-G3-pxQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AHF-nR-0UX" secondAttribute="trailing" id="DQz-2V-uFy"/>
+                            <constraint firstItem="AHF-nR-0UX" firstAttribute="top" secondItem="aii-Mz-CWV" secondAttribute="bottom" constant="20" id="OUE-6z-ZXm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Transaction" id="262-UE-Bie">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UcI-Ds-6R7">
+                            <connections>
+                                <action selector="cancel:" destination="FLJ-a9-umS" id="yuD-Ij-cQd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yJc-uv-cN4">
+                            <connections>
+                                <segue destination="FJZ-EG-VTG" kind="unwind" unwindAction="unwindToTransactionList:" id="xSq-Ef-j9k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="costLabel" destination="dgN-Qa-DnM" id="sxW-oc-HGX"/>
+                        <outlet property="costTextField" destination="kqz-AU-8Gy" id="ptu-hL-Y91"/>
+                        <outlet property="saveButton" destination="yJc-uv-cN4" id="HVa-RR-5dG"/>
+                        <outlet property="titleLabel" destination="P57-NO-tgO" id="Xj2-UR-bzA"/>
+                        <outlet property="titleTextField" destination="bru-IC-PdW" id="SRQ-rd-L3v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b1u-TM-TRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="FJZ-EG-VTG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2627" y="303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4cg-3G-vg7">
@@ -66,6 +187,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tm0-Fi-VVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="302" y="1017"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="cje-39-hEO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xTn-fv-Ldh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MlD-CL-7EY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FLJ-a9-umS" kind="relationship" relationship="rootViewController" id="hE0-Ce-yfk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qto-PD-s3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815" y="303"/>
         </scene>
     </scenes>
 </document>

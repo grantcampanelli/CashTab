@@ -10,13 +10,27 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource {
+// Custom UITableViewCell allowing for customized prototype cells (Configureable in Storyboard)
+class TransactionViewCell: UITableViewCell {
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var cost: UILabel!
+    
+    var thisTransaction: NSManagedObject?
+}
+
+
+class TransactionTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: Properties
     
     @IBOutlet weak var myTableView: UITableView!
     
     var transactions = [NSManagedObject]() // Array of CoreData Objects
     
-    // ACTION: To add a transaction
+    
+    // MARK: Actions
+    
+    // Add a transaction
     @IBAction func addTransaction(sender: AnyObject) {
         // Setting up controller for the pop-up that will appear when the button is pressed
         let alert = UIAlertController(title: "New Transaction", message: "Add a new transaction", preferredStyle: .Alert)
@@ -57,14 +71,48 @@ class ViewController: UIViewController, UITableViewDataSource {
         presentViewController(alert, animated: true, completion: nil)
     }
     
+    // Action handling the unwind segue -> Add a new row to the table view in the transaction table
+    @IBAction func unwindToTransactionList(sender: UIStoryboardSegue) {
+        
+        if let sourceViewController = sender.sourceViewController as? TransactionDetailViewController, newTransaction = sourceViewController.curTransaction {
+            
+            // Add a new transaction
+            let newIndexPath = NSIndexPath(forRow: transactions.count, inSection: 0)
+            
+            // Create a new managed object of "Transaction" type (why is it so tedious :( I just want a new managed object)
+            let appDelegate     = UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext  = appDelegate.managedObjectContext
+            let entity          = NSEntityDescription.entityForName("Transaction", inManagedObjectContext: managedContext)
+            let transactionMO   = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+            
+            // Set the values of the new Transaction Managed Object using the 'newTransaction'
+            transactionMO.setValue(newTransaction.title, forKey: "title")
+            transactionMO.setValue(newTransaction.cost, forKey: "cost")
+            
+            // Append the new managed object to the list of transactions
+            transactions.append(transactionMO)
+            
+            // Animates the addition of a new row to the table view
+            // '.Bottom' shows the inserted row slide in from the bottom
+            myTableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            
+            // Try to commit the changes to the managed object context
+            self.commitChanges()
+        }
+    }
+    
+    
+    // -----------------
+    // MARK: Callbacks
+    // -----------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         // -- Initial Setup --
-        // Set title and register the UITableViewCell class with the table view so when dequeueing a cell,
+        // Register the UITableViewCell class with the table view so when dequeueing a cell,
         //  the table view will return a cell with the correct type
-        title = "CashTab - Pre-Alpha Build"
         myTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
     
@@ -77,8 +125,24 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     // ---------------------------------------
-    // SECTION: Helper Functions
+    // MARK: Helper Functions
     // ---------------------------------------
+    
+    // Commit all changes to the managed context to disk
+    func commitChanges() {
+        // Get the application delegate and grab a reference to its managed object context
+        let appDelegate     = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext  = appDelegate.managedObjectContext
+        
+        // Commit the changes to the disk
+        do {
+            // Try to save the changes, note that it COULD throw an error
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Welp. Couldn't save \(error), \(error.userInfo)")
+        }
+    }
     
     // Fetch (query) the transactions from the context
     func fetchTransactions() {
@@ -167,7 +231,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     
     // ---------------------------------------
-    // SECTION: UITableViewDataSource Protocol
+    // MARK: UITableViewDataSource Protocol
     // ---------------------------------------
     
     // Setting the number of rows of the table view
@@ -178,16 +242,19 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     // Set what will go in each cell (row) of the table
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // Dequeue from the "Cell" identifier
-        let cell = myTableView.dequeueReusableCellWithIdentifier("Cell")
+        // Dequeue from the "TransactionViewCell" identifier
+        let cell = myTableView.dequeueReusableCellWithIdentifier("TransactionViewCell", forIndexPath: indexPath) as! TransactionViewCell
         
-        // Store the transaction
-        let curTransaction = transactions[indexPath.row]
+        // Store the transaction in our custom cell type "TransactionViewCell"
+        cell.thisTransaction = transactions[indexPath.row]
         
         // Grab the "title" out of the Transaction object (of type NSManagedObject)
-        cell!.textLabel!.text = curTransaction.valueForKey("title") as? String
+        cell.title?.text    = cell.thisTransaction?.valueForKey("title") as? String
         
-        return cell!
+        // Get the "cost" from the transction object (of type NSManagedObject)
+        cell.cost?.text     = cell.thisTransaction?.valueForKey("cost") as? String
+        
+        return cell
     }
     
     // Callback that will allow for cell editing
@@ -196,7 +263,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     
-    // Callback that handles swipe-to-delete action
+    // Callback that handles swipe-to actions
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         // Swipe-to-Delete action
         if (editingStyle == .Delete)
@@ -228,9 +295,20 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    // Function to add more swipe-to options
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        // Set up Swipe-to-Edit option
+        let edit = UITableViewRowAction(style: .Normal, title: "Edit") { action, index in
+            print("edit button tapped")
+        }
+        edit.backgroundColor = UIColor.orangeColor() // set the color
+
+        return [edit]
+    }
+    
     
     // --------------------
-    // SECTION: Misc
+    // MARK: Misc
     // --------------------
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
