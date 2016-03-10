@@ -1,0 +1,12 @@
+PODS:
+  - Validator (1.1.1)
+
+DEPENDENCIES:
+  - Validator
+
+SPEC CHECKSUMS:
+  Validator: e17f25fe03c32590be0a9d7d46a779c9ec5dd3b3
+
+PODFILE CHECKSUM: fb421d888c39adf8f7acf2b739e9590827095337
+
+COCOAPODS: 1.0.0.beta.5
