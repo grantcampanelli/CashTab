@@ -47,6 +47,7 @@
                                         <connections>
                                             <outlet property="cost" destination="nK9-ca-4zc" id="kH2-2u-xbG"/>
                                             <outlet property="title" destination="ZlF-tg-eIv" id="luv-qH-LJm"/>
+                                            <segue destination="FLJ-a9-umS" kind="show" identifier="EditTransaction" id="ohr-sr-vXV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -204,7 +205,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qto-PD-s3B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815" y="303"/>
+            <point key="canvasLocation" x="1841" y="719"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ohr-sr-vXV"/>
+    </inferredMetricsTieBreakers>
 </document>

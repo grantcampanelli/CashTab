@@ -25,8 +25,9 @@ class TransactionDetailViewController: UIViewController, UITextFieldDelegate {
     var curTransaction: Transaction?
     
     
-    
+    // -------------------
     // MARK: Actions
+    // -------------------
     
     // "Cancel" Action
     @IBAction func cancel(sender: UIBarButtonItem) {
@@ -68,6 +69,14 @@ class TransactionDetailViewController: UIViewController, UITextFieldDelegate {
         // Allows this class to handle user's input from text fields through delegate callbacks
         titleTextField.delegate = self
         costTextField.delegate  = self
+        
+        
+        // Pre-populate the data view if we are editing the transaction (from "EditTransaction" segue)
+        if let existingTransaction = curTransaction {
+            titleTextField.text = existingTransaction.title
+            costTextField.text  = existingTransaction.cost
+        }
+        
         
         // Make sure "Save" is only enabled if the proper conditions are met (Valid Transaction)
         checkValidTransaction()
@@ -128,3 +137,4 @@ class TransactionDetailViewController: UIViewController, UITextFieldDelegate {
     }
     
 }
+
