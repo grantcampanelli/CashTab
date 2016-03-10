@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37E542AB708BD232C096C065 /* Pods_CashTab_V1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92BAEBE7EC0D2579DA070A5B /* Pods_CashTab_V1.framework */; };
+		73787EB169935A63C3FBE99C /* Pods_CashTab_V1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8E5E4FC93F585DE8901E104 /* Pods_CashTab_V1Tests.framework */; };
+		9C42679D977274C462B08A2C /* Pods_CashTab_V1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E83E9A4FD8169E035337D8A /* Pods_CashTab_V1UITests.framework */; };
 		AA4477881C6A84030012376D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477871C6A84030012376D /* AppDelegate.swift */; };
 		AA44778A1C6A84030012376D /* TransactionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4477891C6A84030012376D /* TransactionTableViewController.swift */; };
 		AA44778D1C6A84030012376D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA44778B1C6A84030012376D /* Main.storyboard */; };
@@ -38,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		029BD21B13A72703A5F242FA /* Pods-CashTab-V1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashTab-V1.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashTab-V1/Pods-CashTab-V1.release.xcconfig"; sourceTree = "<group>"; };
+		2AEAF1B5AF7A3D45544E5120 /* Pods-CashTab-V1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashTab-V1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CashTab-V1/Pods-CashTab-V1.debug.xcconfig"; sourceTree = "<group>"; };
+		3E83E9A4FD8169E035337D8A /* Pods_CashTab_V1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashTab_V1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73CF7FB2EEE87E45B92461C6 /* Pods-CashTab-V1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashTab-V1UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CashTab-V1UITests/Pods-CashTab-V1UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		92BAEBE7EC0D2579DA070A5B /* Pods_CashTab_V1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashTab_V1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ABF78A55C206247DE1BC314 /* Pods-CashTab-V1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashTab-V1Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashTab-V1Tests/Pods-CashTab-V1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		AA4477841C6A84020012376D /* CashTab-V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CashTab-V1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA4477871C6A84030012376D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA4477891C6A84030012376D /* TransactionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +64,9 @@
 		AAAE36E11C7D2A0400E28636 /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
 		AAAE36E31C7D4E3700E28636 /* CTModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CTModel.swift; sourceTree = "<group>"; };
 		AAAE373F1C921BA100E28636 /* BACKUP_CODE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACKUP_CODE.swift; sourceTree = "<group>"; };
+		B1A81FDF5AE48E7CBA50AA0C /* Pods-CashTab-V1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashTab-V1Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CashTab-V1Tests/Pods-CashTab-V1Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		B8E5E4FC93F585DE8901E104 /* Pods_CashTab_V1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashTab_V1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C895E3EBB5089DCF7AD7AD49 /* Pods-CashTab-V1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CashTab-V1UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CashTab-V1UITests/Pods-CashTab-V1UITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E542AB708BD232C096C065 /* Pods_CashTab_V1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73787EB169935A63C3FBE99C /* Pods_CashTab_V1Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +90,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C42679D977274C462B08A2C /* Pods_CashTab_V1UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B0F7C47BABB6BEF31C4CA50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2AEAF1B5AF7A3D45544E5120 /* Pods-CashTab-V1.debug.xcconfig */,
+				029BD21B13A72703A5F242FA /* Pods-CashTab-V1.release.xcconfig */,
+				B1A81FDF5AE48E7CBA50AA0C /* Pods-CashTab-V1Tests.debug.xcconfig */,
+				9ABF78A55C206247DE1BC314 /* Pods-CashTab-V1Tests.release.xcconfig */,
+				73CF7FB2EEE87E45B92461C6 /* Pods-CashTab-V1UITests.debug.xcconfig */,
+				C895E3EBB5089DCF7AD7AD49 /* Pods-CashTab-V1UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8601E3C6141955C9E3E3C1AF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				92BAEBE7EC0D2579DA070A5B /* Pods_CashTab_V1.framework */,
+				B8E5E4FC93F585DE8901E104 /* Pods_CashTab_V1Tests.framework */,
+				3E83E9A4FD8169E035337D8A /* Pods_CashTab_V1UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA44777B1C6A84020012376D = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +127,8 @@
 				AA44779E1C6A84030012376D /* CashTab-V1Tests */,
 				AA4477A91C6A84030012376D /* CashTab-V1UITests */,
 				AA4477851C6A84020012376D /* Products */,
+				2B0F7C47BABB6BEF31C4CA50 /* Pods */,
+				8601E3C6141955C9E3E3C1AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA4477AF1C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1" */;
 			buildPhases = (
+				8D6AF995BDED31E5FA00D395 /* 📦 Check Pods Manifest.lock */,
 				AA4477801C6A84020012376D /* Sources */,
 				AA4477811C6A84020012376D /* Frameworks */,
 				AA4477821C6A84020012376D /* Resources */,
+				419E47BBB46A2BFFBCE0782A /* 📦 Embed Pods Frameworks */,
+				A6C46C7BBB6FB4F79DA5D3AA /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA4477B21C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1Tests" */;
 			buildPhases = (
+				8CB531F515FAF2E2BCCBC7CE /* 📦 Check Pods Manifest.lock */,
 				AA4477971C6A84030012376D /* Sources */,
 				AA4477981C6A84030012376D /* Frameworks */,
 				AA4477991C6A84030012376D /* Resources */,
+				1845008D1B58FB8032512043 /* 📦 Embed Pods Frameworks */,
+				810E4720C6677D7FFF86C04A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA4477B51C6A84030012376D /* Build configuration list for PBXNativeTarget "CashTab-V1UITests" */;
 			buildPhases = (
+				13171FA9E42A71018338A4A7 /* 📦 Check Pods Manifest.lock */,
 				AA4477A21C6A84030012376D /* Sources */,
 				AA4477A31C6A84030012376D /* Frameworks */,
 				AA4477A41C6A84030012376D /* Resources */,
+				978CA437E68A3918822B354F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -265,6 +313,129 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13171FA9E42A71018338A4A7 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1845008D1B58FB8032512043 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CashTab-V1Tests/Pods-CashTab-V1Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		419E47BBB46A2BFFBCE0782A /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CashTab-V1/Pods-CashTab-V1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		810E4720C6677D7FFF86C04A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CashTab-V1Tests/Pods-CashTab-V1Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CB531F515FAF2E2BCCBC7CE /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8D6AF995BDED31E5FA00D395 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		978CA437E68A3918822B354F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CashTab-V1UITests/Pods-CashTab-V1UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6C46C7BBB6FB4F79DA5D3AA /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CashTab-V1/Pods-CashTab-V1-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA4477801C6A84020012376D /* Sources */ = {
@@ -416,6 +587,7 @@
 		};
 		AA4477B01C6A84030012376D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AEAF1B5AF7A3D45544E5120 /* Pods-CashTab-V1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CashTab-V1/Info.plist";
@@ -427,6 +599,7 @@
 		};
 		AA4477B11C6A84030012376D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 029BD21B13A72703A5F242FA /* Pods-CashTab-V1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "CashTab-V1/Info.plist";
@@ -438,6 +611,7 @@
 		};
 		AA4477B31C6A84030012376D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B1A81FDF5AE48E7CBA50AA0C /* Pods-CashTab-V1Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "CashTab-V1Tests/Info.plist";
@@ -450,6 +624,7 @@
 		};
 		AA4477B41C6A84030012376D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9ABF78A55C206247DE1BC314 /* Pods-CashTab-V1Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "CashTab-V1Tests/Info.plist";
@@ -462,6 +637,7 @@
 		};
 		AA4477B61C6A84030012376D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73CF7FB2EEE87E45B92461C6 /* Pods-CashTab-V1UITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "CashTab-V1UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -474,6 +650,7 @@
 		};
 		AA4477B71C6A84030012376D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C895E3EBB5089DCF7AD7AD49 /* Pods-CashTab-V1UITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "CashTab-V1UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
